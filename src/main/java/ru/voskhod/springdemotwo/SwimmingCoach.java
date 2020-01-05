@@ -8,18 +8,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class SwimmingCoach implements Coach {
 
-    @Value("${foo.email}")
-    private String email;
+    private FortuneService fortuneService;
 
-    @Value("${foo.team}")
-    private String team;
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getTeam() {
-        return team;
+    @Autowired
+    public SwimmingCoach(@Qualifier("myRandomFortuneService") FortuneService fortuneService) {
+        this.fortuneService = fortuneService;
     }
 
     @Override
@@ -29,7 +22,7 @@ public class SwimmingCoach implements Coach {
 
     @Override
     public String getDailyFortune() {
-        return null;
+        return fortuneService.getDailyFortune();
     }
 
 

@@ -17,8 +17,8 @@ public class AnnotationDemoApp {
 
         // call method to get the daily fortune
 //        System.out.println(tennisCoach.getDailyFortune());
-        System.out.println(swimmingCoach.getEmail());
-        System.out.println(swimmingCoach.getTeam());
+        System.out.println(swimmingCoach.getDailyFortune());
+//        System.out.println(swimmingCoach.getTeam());
 
         // close the context
         context.close();
